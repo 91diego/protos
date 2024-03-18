@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package menu;
+
+import "google/protobuf/empty.proto";
+import "menu/messages/menu.proto";
+
+option go_package = "github.com/91diego/protos";
+
+service MenuService {
+    rpc GetMenu (google.protobuf.Empty) returns (GetMenuResponse){}
+    rpc CreateCategory (CreateCategoryRequest) returns (CreateCategoryResponse);
+    rpc UpdateCategory (UpdateCategoryRequest) returns (UpdateCategoryResponse);
+    rpc DeleteCategory (DeleteCategoryRequest) returns (DeleteCategoryResponse);
+    rpc AddElement (AddElementRequest) returns (AddElementResponse);
+    rpc UpdateElement (UpdateElementRequest) returns (UpdateElementResponse);
+    rpc DeleteElement (DeleteElementRequest) returns (DeleteElementResponse);
+    //rpc GetProduct (GetProductsRequest) returns (GetProductsResponse) {}
+}

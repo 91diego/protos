@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package menu;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/91diego/protos/menu/models";
+
+message Category {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    google.protobuf.Timestamp created_at = 4;
+    google.protobuf.Timestamp updated_at = 5;
+}
+
+message MenuElement {
+    string id = 1;
+    string name = 2;
+    string description = 3;
+    double price = 4;
+    string image = 5;
+    string categoryId = 6;
+    google.protobuf.Timestamp created_at = 7;
+    google.protobuf.Timestamp updated_at = 8;
+}

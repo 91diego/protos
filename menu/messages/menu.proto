@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package menu;
+
+import "menu/models/menu.proto";
+
+option go_package = "github.com/91diego/protos/menu/messages";
+
+// CreateCategoryRequest
+message CreateCategoryRequest {
+    Category category = 1;
+}
+
+// CreateCategoryResponse
+message CreateCategoryResponse {
+    string id = 1;
+}
+
+// UpdateCategoryRequest
+message UpdateCategoryRequest {
+    Category category = 1;
+}
+
+// UpdateCategoryResponse
+message UpdateCategoryResponse {
+    string id = 1;
+}
+
+// DeleteCategoryRequest
+message DeleteCategoryRequest {
+    string id = 1;
+}
+
+// DeleteCategoryResponse
+message DeleteCategoryResponse {}
+
+// AddElementRequest
+message AddElementRequest {
+    MenuElement element = 1;
+}
+
+// AddElementResponse
+message AddElementResponse {
+    string id = 1;
+}
+
+// UpdateElementRequest
+message UpdateElementRequest {
+    MenuElement element  = 1;
+}
+
+// UpdateElementResponse
+message UpdateElementResponse {
+    string id = 1;
+}
+
+// DeleteElementRequest
+message DeleteElementRequest {
+    string id = 1;
+}
+
+// DeleteElementResponse
+message DeleteElementResponse {}
+
+// GetMenu
+message GetMenuResponse {
+    repeated MenuElement element  = 1;
+}

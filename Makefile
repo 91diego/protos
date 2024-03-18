@@ -1,9 +1,8 @@
 # Makefile
-
-build:
+protoc-all:
 	@echo "Compiling protobuf"
 	protoc -I . -I google/api --go_out=. --go_opt=paths=source_relative \
-	--go-grpc_out=. --go-grpc_opt=paths=source_relative */*/*.proto *.proto
+	--go-grpc_out=. --go-grpc_opt=paths=source_relative */*/*.proto
 	@echo "Done!"
 
 protoc:
