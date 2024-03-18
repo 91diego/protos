@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package products;
+
+import "google/api/annotations.proto";
+
+import "products/messages/product.proto";
+
+option go_package = "github.com/91diego/protos/products/services";
+
+service OfficeService {
+    rpc CreateOffice (CreateOfficeRequest) returns (CreateOfficeResponse){
+        option (google.api.http) = {
+                post: "/v1/office"
+                body: "*"
+        };
+    };
+}
