@@ -21,17 +21,17 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
-// CreateOfficeRequest store new office
-type CreateOfficeRequest struct {
+// GetProductsRequest get all products
+type GetProductsRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Office *models.Office `protobuf:"bytes,1,opt,name=Office,proto3" json:"Office,omitempty"`
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
 }
 
-func (x *CreateOfficeRequest) Reset() {
-	*x = CreateOfficeRequest{}
+func (x *GetProductsRequest) Reset() {
+	*x = GetProductsRequest{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_products_messages_product_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -39,13 +39,13 @@ func (x *CreateOfficeRequest) Reset() {
 	}
 }
 
-func (x *CreateOfficeRequest) String() string {
+func (x *GetProductsRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateOfficeRequest) ProtoMessage() {}
+func (*GetProductsRequest) ProtoMessage() {}
 
-func (x *CreateOfficeRequest) ProtoReflect() protoreflect.Message {
+func (x *GetProductsRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_products_messages_product_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -57,29 +57,29 @@ func (x *CreateOfficeRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateOfficeRequest.ProtoReflect.Descriptor instead.
-func (*CreateOfficeRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetProductsRequest.ProtoReflect.Descriptor instead.
+func (*GetProductsRequest) Descriptor() ([]byte, []int) {
 	return file_products_messages_product_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *CreateOfficeRequest) GetOffice() *models.Office {
+func (x *GetProductsRequest) GetId() string {
 	if x != nil {
-		return x.Office
+		return x.Id
 	}
-	return nil
+	return ""
 }
 
-// CreateUserResponse returns created office id
-type CreateOfficeResponse struct {
+// GetProductsResponse returns product id
+type GetProductsResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+	Product *models.Product `protobuf:"bytes,1,opt,name=Product,proto3" json:"Product,omitempty"`
 }
 
-func (x *CreateOfficeResponse) Reset() {
-	*x = CreateOfficeResponse{}
+func (x *GetProductsResponse) Reset() {
+	*x = GetProductsResponse{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_products_messages_product_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -87,13 +87,13 @@ func (x *CreateOfficeResponse) Reset() {
 	}
 }
 
-func (x *CreateOfficeResponse) String() string {
+func (x *GetProductsResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CreateOfficeResponse) ProtoMessage() {}
+func (*GetProductsResponse) ProtoMessage() {}
 
-func (x *CreateOfficeResponse) ProtoReflect() protoreflect.Message {
+func (x *GetProductsResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_products_messages_product_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -105,16 +105,16 @@ func (x *CreateOfficeResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CreateOfficeResponse.ProtoReflect.Descriptor instead.
-func (*CreateOfficeResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use GetProductsResponse.ProtoReflect.Descriptor instead.
+func (*GetProductsResponse) Descriptor() ([]byte, []int) {
 	return file_products_messages_product_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *CreateOfficeResponse) GetId() string {
+func (x *GetProductsResponse) GetProduct() *models.Product {
 	if x != nil {
-		return x.Id
+		return x.Product
 	}
-	return ""
+	return nil
 }
 
 var File_products_messages_product_proto protoreflect.FileDescriptor
@@ -124,17 +124,17 @@ var file_products_messages_product_proto_rawDesc = []byte{
 	0x67, 0x65, 0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x08, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x1a, 0x1d, 0x70, 0x72, 0x6f,
 	0x64, 0x75, 0x63, 0x74, 0x73, 0x2f, 0x6d, 0x6f, 0x64, 0x65, 0x6c, 0x73, 0x2f, 0x70, 0x72, 0x6f,
-	0x64, 0x75, 0x63, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x3f, 0x0a, 0x13, 0x43, 0x72,
-	0x65, 0x61, 0x74, 0x65, 0x4f, 0x66, 0x66, 0x69, 0x63, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x28, 0x0a, 0x06, 0x4f, 0x66, 0x66, 0x69, 0x63, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x0b, 0x32, 0x10, 0x2e, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x2e, 0x4f, 0x66, 0x66,
-	0x69, 0x63, 0x65, 0x52, 0x06, 0x4f, 0x66, 0x66, 0x69, 0x63, 0x65, 0x22, 0x26, 0x0a, 0x14, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x4f, 0x66, 0x66, 0x69, 0x63, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x02, 0x69, 0x64, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x39, 0x31, 0x64, 0x69, 0x65, 0x67, 0x6f, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x73,
-	0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x64, 0x75, 0x63, 0x74, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x24, 0x0a, 0x12, 0x47, 0x65,
+	0x74, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
+	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64,
+	0x22, 0x42, 0x0a, 0x13, 0x47, 0x65, 0x74, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x2b, 0x0a, 0x07, 0x50, 0x72, 0x6f, 0x64, 0x75,
+	0x63, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x11, 0x2e, 0x70, 0x72, 0x6f, 0x64, 0x75,
+	0x63, 0x74, 0x73, 0x2e, 0x50, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x52, 0x07, 0x50, 0x72, 0x6f,
+	0x64, 0x75, 0x63, 0x74, 0x42, 0x2d, 0x5a, 0x2b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x39, 0x31, 0x64, 0x69, 0x65, 0x67, 0x6f, 0x2f, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x73, 0x2f, 0x70, 0x72, 0x6f, 0x64, 0x75, 0x63, 0x74, 0x73, 0x2f, 0x6d, 0x65, 0x73, 0x73, 0x61,
+	0x67, 0x65, 0x73, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -151,12 +151,12 @@ func file_products_messages_product_proto_rawDescGZIP() []byte {
 
 var file_products_messages_product_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_products_messages_product_proto_goTypes = []interface{}{
-	(*CreateOfficeRequest)(nil),  // 0: products.CreateOfficeRequest
-	(*CreateOfficeResponse)(nil), // 1: products.CreateOfficeResponse
-	(*models.Office)(nil),        // 2: products.Office
+	(*GetProductsRequest)(nil),  // 0: products.GetProductsRequest
+	(*GetProductsResponse)(nil), // 1: products.GetProductsResponse
+	(*models.Product)(nil),      // 2: products.Product
 }
 var file_products_messages_product_proto_depIdxs = []int32{
-	2, // 0: products.CreateOfficeRequest.Office:type_name -> products.Office
+	2, // 0: products.GetProductsResponse.Product:type_name -> products.Product
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -171,7 +171,7 @@ func file_products_messages_product_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_products_messages_product_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateOfficeRequest); i {
+			switch v := v.(*GetProductsRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -183,7 +183,7 @@ func file_products_messages_product_proto_init() {
 			}
 		}
 		file_products_messages_product_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*CreateOfficeResponse); i {
+			switch v := v.(*GetProductsResponse); i {
 			case 0:
 				return &v.state
 			case 1:

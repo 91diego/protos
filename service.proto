@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package products;
+
+import "google/api/annotations.proto";
+
+import "products/messages/product.proto";
+
+option go_package = "github.com/91diego/protos";
+
+service Service {
+    rpc GetProduct (GetProductsRequest) returns (GetProductsResponse) {}
+}

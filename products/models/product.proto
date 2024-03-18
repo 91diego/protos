@@ -6,12 +6,11 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/91diego/protos/products/models";
 
-message Office {
+message Product {
     string id = 1;
     string name = 2;
-    string address = 3;
-    double balance = 4;
-    string manager = 5;
+    string stock = 3;
+    double price = 4;
     google.protobuf.Timestamp created_at = 6;
     google.protobuf.Timestamp updated_at = 7;
 }
