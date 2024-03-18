@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package products;
+
+import "products/models/product.proto";
+
+option go_package = "github.com/91diego/protos/products/messages";
+
+// CreateOfficeRequest store new office
+message CreateOfficeRequest {
+    Office Office = 1;
+}
+
+// CreateUserResponse returns created office id
+message CreateOfficeResponse {
+    string id = 1;
+}
